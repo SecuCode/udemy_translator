@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Live Translator (Local)",
+  "version": "1.0",
+  "description": "Translate Udemy captions into Korean using your local Hugging Face server.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:8000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.udemy.com/*"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}

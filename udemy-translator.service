@@ -1,0 +1,12 @@
+[Unit]
+Description=Udemy Translator API
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/youruser/server.py
+WorkingDirectory=/home/youruser
+Restart=always
+User=youruser
+
+[Install]
+WantedBy=multi-user.target
