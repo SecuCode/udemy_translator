@@ -1,98 +1,86 @@
 # server_nllb.py
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from transformers import pipeline
 import torch
 
+# torch.load 패치: weights_only 기본값 문제 해결 (transformers 내부 호출 포함)
+import functools
+_original_torch_load = torch.load
+@functools.wraps(_original_torch_load)
+def _patched_torch_load(*args, **kwargs):
+    if 'weights_only' not in kwargs:
+        kwargs['weights_only'] = False
+    return _original_torch_load(*args, **kwargs)
+torch.load = _patched_torch_load
+
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
 app = FastAPI()
+
+# CORS 설정 - 브라우저 확장에서 접근 허용
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class TranslationRequest(BaseModel):
     text: str
 
-# ------- 설정: 품질 최우선 모델 -------
-MODEL = "facebook/nllb-200-distilled-600M" #"facebook/nllb-200-distilled-600M" #"facebook/nllb-200-3.3B"   # <-- 최고품>
-질 권장
-SRC_LANG = "eng_Latn"              # FLORES-200 형식
-TGT_LANG = "kor_Hang"              # 한국어(한글) 코드
-# ---------------------------------------
+# ------- 설정 -------
+MODEL_NAME = "facebook/nllb-200-distilled-600M"
+SRC_LANG = "eng_Latn"    # 영어 (FLORES-200 코드)
+TGT_LANG = "kor_Hang"    # 한국어 (FLORES-200 코드)
+# ---------------------
 
-# GPU 있으면 device=0, 없으면 device=-1 (CPU)
-device = 0 if torch.cuda.is_available() else -1
+# GPU 있으면 CUDA, 없으면 CPU
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-pipeline_kwargs = {}
-if device == 0:
-    # GPU가 있으면 FP16으로 로드 (메모리 절감)
-    pipeline_kwargs["torch_dtype"] = torch.float16
+print(f"[INFO] Loading model: {MODEL_NAME}")
+print(f"[INFO] Device: {device}")
 
-# pipeline에 src_lang, tgt_lang 넘겨서 번역 (transformers 문서 권장 방식)
-translator = pipeline(
-    "translation",
-    model=MODEL,
-    src_lang=SRC_LANG,
-    tgt_lang=TGT_LANG,
-    device=device,
-    **pipeline_kwargs
-)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME, use_safetensors=True).to(device)
 
-@app.post("/translate")
-async def translate(req: TranslationRequest):
-    # pipeline은 리스트 형태의 결과 반환 (여기선 단일 문장)
-    out = translator(
-            req.text,
-            max_length=128,
-            num_beams=1,
-            do_sample=False,)
-    # 예: [{"translation_text": "..."}]
-    return {"translated_text": out[0]["translation_text"]}
+if device.type == "cuda":
+    model = model.half()  # FP16 for GPU
 
-if __name__ == "__main__":
-    import uvicorn
-# server_nllb.py
-from fastapi import FastAPI
-from pydantic import BaseModel
-from transformers import pipeline
-import torch
+print(f"[INFO] Model loaded successfully!")
 
-app = FastAPI()
-
-class TranslationRequest(BaseModel):
-    text: str
-
-# ------- 설정: 품질 최우선 모델 -------
-MODEL = "facebook/nllb-200-distilled-600M" #"facebook/nllb-200-distilled-600M" #"facebook/nllb-200-3.3B"   # <-- 최고품>
-질 권장
-SRC_LANG = "eng_Latn"              # FLORES-200 형식
-TGT_LANG = "kor_Hang"              # 한국어(한글) 코드
-# ---------------------------------------
-
-# GPU 있으면 device=0, 없으면 device=-1 (CPU)
-device = 0 if torch.cuda.is_available() else -1
-
-pipeline_kwargs = {}
-if device == 0:
-    # GPU가 있으면 FP16으로 로드 (메모리 절감)
-    pipeline_kwargs["torch_dtype"] = torch.float16
-
-# pipeline에 src_lang, tgt_lang 넘겨서 번역 (transformers 문서 권장 방식)
-translator = pipeline(
-    "translation",
-    model=MODEL,
-    src_lang=SRC_LANG,
-    tgt_lang=TGT_LANG,
-    device=device,
-    **pipeline_kwargs
-)
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "ok",
+        "model": MODEL_NAME,
+        "device": str(device)
+    }
 
 @app.post("/translate")
 async def translate(req: TranslationRequest):
-    # pipeline은 리스트 형태의 결과 반환 (여기선 단일 문장)
-    out = translator(
-            req.text,
-            max_length=128,
+    # 토크나이저에 소스 언어 설정
+    tokenizer.src_lang = SRC_LANG
+    
+    # 입력 토크나이즈
+    inputs = tokenizer(req.text, return_tensors="pt", max_length=128, truncation=True).to(device)
+    
+    # 타겟 언어의 토큰 ID
+    forced_bos_token_id = tokenizer.convert_tokens_to_ids(TGT_LANG)
+    
+    # 번역 생성
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs,
+            forced_bos_token_id=forced_bos_token_id,
+            max_new_tokens=128,
             num_beams=1,
-            do_sample=False,)
-    # 예: [{"translation_text": "..."}]
-    return {"translated_text": out[0]["translation_text"]}
+            do_sample=False,
+        )
+    
+    translated = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return {"translated_text": translated}
 
 if __name__ == "__main__":
     import uvicorn

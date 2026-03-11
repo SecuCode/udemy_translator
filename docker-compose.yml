@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  udemy-translator:
+    build: .
+    container_name: udemy-translator
+    restart: unless-stopped
+    ports:
+      - "8000:8000"   # FastAPI 번역 API
+      - "2222:22"      # SSH 접속 (호스트 2222 → 컨테이너 22)
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - model-cache:/root/.cache/huggingface   # 모델 캐시 영속화
+    # GPU 사용 시 아래 주석 해제
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+volumes:
+  model-cache:
+    driver: local
