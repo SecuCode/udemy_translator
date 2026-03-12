@@ -31,7 +31,7 @@ class TranslationRequest(BaseModel):
     text: str
 
 # ------- 설정 -------
-MODEL_NAME = "facebook/nllb-200-distilled-600M"
+MODEL_NAME = "facebook/nllb-200-distilled-1.3B"
 SRC_LANG = "eng_Latn"    # 영어 (FLORES-200 코드)
 TGT_LANG = "kor_Hang"    # 한국어 (FLORES-200 코드)
 # ---------------------
