@@ -1,0 +1,33 @@
+.page { background-color: var(--color-white); }
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+
+/* Light intro */
+.lightSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.introGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+.introText {}
+.label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-text-light); display: block; margin-bottom: var(--space-lg); }
+.heading { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-text-dark); line-height: 1.8; margin-bottom: var(--space-lg); }
+.desc { font-size: var(--text-sm); color: var(--color-text-body); line-height: 2; }
+.introImageWrap { overflow: hidden; }
+.introImage { width: 100%; height: auto; display: block; }
+
+/* Dark strategy cards */
+.darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.darkLabel { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: rgba(255,255,255,0.4); display: block; margin-bottom: var(--space-sm); }
+.darkHeading { font-size: var(--text-h2); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-3xl); }
+.strategyGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background-color: rgba(255,255,255,0.05); }
+.strategyCard { padding: var(--space-2xl); }
+.strategyIcon { font-size: 2rem; display: block; margin-bottom: var(--space-lg); }
+.strategyTitle { font-size: var(--text-h3); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-md); }
+.strategyDesc { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 2; }
+
+/* Light performance */
+.perfSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
+.perfGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2xl); text-align: center; }
+.perfItem {}
+.perfValue { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--color-text-dark); display: block; margin-bottom: var(--space-sm); }
+.perfUnit { font-size: 0.5em; font-weight: 400; color: var(--color-text-light); }
+.perfLabel { font-size: var(--text-sm); color: var(--color-text-body); }
+
+@media (max-width: 1024px) { .introGrid, .strategyGrid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .lightSection, .darkSection, .perfSection { padding: var(--space-2xl) 0; } .perfGrid { grid-template-columns: 1fr; gap: var(--space-xl); } }

@@ -1,0 +1,151 @@
+.page { background-color: var(--color-white); }
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+
+.label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+.labelDark { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+
+/* Summary Section */
+.summarySection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.summaryTitle { font-size: var(--text-3xl); font-weight: 600; color: var(--color-white); margin-bottom: 3rem; }
+.summaryGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.summaryCard {
+  background: linear-gradient(135deg, rgba(201,169,110,0.1) 0%, rgba(255,255,255,0.03) 100%);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.summaryCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+}
+.summaryValue { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--color-white); display: block; }
+.summaryUnit { font-size: 1.25rem; color: var(--color-gold); margin-left: 0.25rem; }
+.summaryLabel { display: block; margin-top: 0.75rem; font-size: var(--text-sm); color: rgba(255,255,255,0.5); letter-spacing: 0.05em; }
+
+/* Fund List Section */
+.fundListSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
+.fundListTitle { font-size: var(--text-3xl); font-weight: 600; color: #111; margin-bottom: 2rem; }
+
+.categoryFilter { display: flex; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.filterBtn {
+  padding: 0.625rem 1.5rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 24px;
+  background: var(--color-white);
+  font-size: var(--text-sm);
+  color: #555;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filterBtn:hover { border-color: var(--color-gold); color: var(--color-gold); }
+.filterBtnActive {
+  background: #111;
+  border-color: #111;
+  color: var(--color-white);
+}
+
+.filterCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: rgba(0,0,0,0.08);
+  font-size: 0.7rem;
+  margin-left: 0.4rem;
+  padding: 0 0.35rem;
+}
+
+.filterBtnActive .filterCount {
+  background: rgba(255,255,255,0.2);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+  color: #999;
+  font-size: var(--text-sm);
+}
+
+.fundGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+.fundCard {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #eee;
+  transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+  cursor: pointer;}
+.fundCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.fundCardHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.fundCategory {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 0.05em;
+}
+.fundStatus {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(5,150,105,0.1);
+  color: #059669;
+  border: 1px solid rgba(5,150,105,0.2);
+}
+.fundStatusRecruiting {
+  background: rgba(201,169,110,0.1);
+  color: var(--color-gold);
+  border-color: rgba(201,169,110,0.3);
+}
+
+.fundName { font-size: 1.25rem; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+.fundDesc { font-size: var(--text-sm); color: #666; line-height: 1.7; margin-bottom: 1.5rem; }
+
+.fundMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+.fundMetaItem { display: flex; flex-direction: column; gap: 0.25rem; }
+.fundMetaLabel { font-size: 0.7rem; color: #999; letter-spacing: 0.05em; text-transform: uppercase; }
+.fundMetaValue { font-size: var(--text-sm); font-weight: 500; color: #333; font-family: var(--font-display); }
+
+/* Disclaimer */
+.disclaimerSection { background-color: #0a0a0a; padding: var(--space-3xl) 0; }
+.disclaimer { padding: 2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; }
+.disclaimerTitle { font-size: 1rem; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 1rem; }
+.disclaimerList { list-style: none; padding: 0; margin: 0; }
+.disclaimerList li {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.35);
+  line-height: 1.8;
+  padding-left: 1rem;
+  position: relative;
+}
+.disclaimerList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 1024px) {
+  .summaryGrid { grid-template-columns: repeat(2, 1fr); }
+  .fundGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .summaryGrid { grid-template-columns: 1fr 1fr; }
+  .fundMeta { grid-template-columns: 1fr; }
+}

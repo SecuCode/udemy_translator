@@ -1,0 +1,261 @@
+.page { background-color: var(--color-white); }
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+
+/* Common Section Headers */
+.lightSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+
+.sectionHeader { text-align: center; margin-bottom: var(--space-3xl); }
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionLabelLight {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-lg);
+}
+.sectionTitleLight {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+.sectionDesc {
+  font-size: var(--text-body);
+  color: var(--color-text-body);
+  line-height: 2;
+}
+.sectionDescLight {
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.5);
+  line-height: 2;
+}
+
+/* ========== Section 1: Investment Principles ========== */
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+.principleCard {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  transition: box-shadow var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth);
+}
+.principleCard:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.principleNumber {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.principleTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 0.25rem;
+}
+.principleTitleEn {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.principleDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 1.85;
+}
+
+/* ========== Section 2: Investment Process ========== */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: rgba(255,255,255,0.08);
+  margin-bottom: var(--space-3xl);
+}
+.processCard {
+  padding: var(--space-xl);
+  background-color: rgba(255,255,255,0.02);
+  min-height: 260px;
+}
+.processStep {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.processTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+.processList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.processItem {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.5);
+  line-height: 2;
+  padding-left: 1rem;
+  position: relative;
+}
+.processItem::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+.processImageWrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.processImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== Section 3: Strategy Areas ========== */
+.strategyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.strategyCard {
+  padding: var(--space-xl);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  transition: box-shadow var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth);
+}
+.strategyCard:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.strategyCardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+.strategyIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+.strategyTitleEn {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 2px;
+}
+.strategyTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+.strategyDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 1.85;
+  margin-bottom: var(--space-lg);
+}
+.strategyDetails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: var(--space-md);
+}
+.strategyDetail {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 2;
+  padding-left: 1rem;
+  position: relative;
+}
+.strategyDetail::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+}
+
+/* ========== Section 4: Commitment ========== */
+.commitSection {
+  background-color: var(--bg-section);
+  padding: var(--space-4xl) 0;
+  text-align: center;
+}
+.commitContent {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.commitLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-lg);
+}
+.commitTitle {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+}
+.goldText { color: var(--color-gold); }
+.commitDesc {
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.55);
+  line-height: 2;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .principlesGrid { grid-template-columns: 1fr; }
+  .processGrid { grid-template-columns: repeat(2, 1fr); }
+  .strategyGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .lightSection, .darkSection, .commitSection { padding: var(--space-2xl) 0; }
+  .processGrid { grid-template-columns: 1fr; }
+  .principleCard { flex-direction: column; gap: var(--space-sm); }
+}

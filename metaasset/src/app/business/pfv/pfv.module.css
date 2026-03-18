@@ -1,0 +1,32 @@
+.page { background-color: var(--color-white); }
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+
+/* Dark intro */
+.darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.introGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+.introText {}
+.label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: rgba(255,255,255,0.4); display: block; margin-bottom: var(--space-lg); }
+.heading { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-white); line-height: 1.8; margin-bottom: var(--space-lg); }
+.desc { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 2; }
+.introImageWrap { overflow: hidden; }
+.introImage { width: 100%; height: auto; display: block; }
+
+/* Light process */
+.processSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.processLabel { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-text-light); display: block; margin-bottom: var(--space-sm); }
+.processHeading { font-size: var(--text-h2); font-weight: 700; color: var(--color-text-dark); margin-bottom: var(--space-3xl); }
+.processGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background-color: var(--color-border); }
+.processStep { background-color: var(--color-white); padding: var(--space-2xl) var(--space-lg); text-align: center; }
+.stepNum { font-family: var(--font-display); font-size: var(--text-display); font-weight: 200; color: var(--color-gold); display: block; margin-bottom: var(--space-sm); }
+.stepTitle { font-size: var(--text-body); font-weight: 600; color: var(--color-text-dark); }
+
+/* Dark stats */
+.statsSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.statsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2xl); text-align: center; }
+.statItem {}
+.statValue { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--color-white); display: block; margin-bottom: var(--space-sm); }
+.statUnit { font-size: 0.5em; font-weight: 400; color: rgba(255,255,255,0.4); }
+.statLabel { font-size: var(--text-sm); color: rgba(255,255,255,0.4); }
+
+@media (max-width: 1024px) { .introGrid { grid-template-columns: 1fr; } .processGrid { grid-template-columns: repeat(3, 1fr); } .statsGrid { grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width: 768px) { .darkSection, .processSection, .statsSection { padding: var(--space-2xl) 0; } .processGrid { grid-template-columns: 1fr; } }

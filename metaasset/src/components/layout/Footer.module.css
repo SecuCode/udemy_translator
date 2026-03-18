@@ -1,0 +1,145 @@
+.footer {
+  background-color: var(--color-dark);
+  padding: var(--space-3xl) 0 var(--space-lg);
+}
+
+.footerInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-px);
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.footerLogo {
+  font-family: 'Montserrat', var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.footerLogoImg {
+  flex-shrink: 0;
+  width: 18px !important;
+  height: 15px !important;
+  margin-right: 1px;
+  transform: translateY(-1px);
+}
+
+.companyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detailItem {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+}
+
+.detailLabel {
+  color: rgba(255,255,255,0.6);
+  margin-right: var(--space-xs);
+}
+
+.footerNav {
+  display: flex;
+  gap: var(--space-2xl);
+}
+
+.footerNavGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerNavTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--space-xs);
+}
+
+.footerNavLink {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.35);
+  transition: color var(--dur-fast);
+  text-decoration: none;
+}
+
+.footerNavLink:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+.footerDivider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255,255,255,0.08);
+  margin-bottom: var(--space-md);
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.25);
+}
+
+.disclaimer {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.15);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.legalLinks {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.legalLink {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.35);
+  transition: color var(--dur-fast);
+  text-decoration: none;
+}
+
+.legalLink:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    flex-direction: column;
+  }
+
+  .footerNav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}

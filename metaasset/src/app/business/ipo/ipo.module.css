@@ -1,0 +1,41 @@
+.page { background-color: var(--color-white); }
+.fillImage { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
+.inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+
+.label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+.labelDark { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+
+/* Dark Section */
+.darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.heading { font-size: var(--text-3xl); font-weight: 600; color: var(--color-white); line-height: 1.4; margin-bottom: 1.5rem; }
+.desc { font-size: var(--text-base); color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+.introGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.introImageCol { border-radius: 4px; overflow: hidden; }
+
+/* Process Section */
+.processSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
+.headingDark { font-size: var(--text-3xl); font-weight: 600; color: #111; margin-bottom: 3rem; }
+.processGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.processCard { background: var(--color-white); border: 1px solid #e0e0e0; border-radius: 8px; padding: 2rem 1.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+.processCard:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.processStep { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+.processTitle { font-size: 1.1rem; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+.processDesc { font-size: var(--text-sm); color: #666; line-height: 1.6; }
+
+/* Stats Section */
+.statsSection { background-color: #0a0a0a; padding: var(--space-3xl) 0; }
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+.statItem { padding: 2rem 0; }
+.statValue { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--color-white); }
+.statUnit { font-size: 1.5rem; color: var(--color-gold); margin-left: 0.25rem; }
+.statLabel { display: block; margin-top: 0.75rem; font-size: var(--text-sm); color: rgba(255,255,255,0.5); }
+
+@media (max-width: 1024px) {
+  .introGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .processGrid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .processGrid { grid-template-columns: 1fr 1fr; }
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+}

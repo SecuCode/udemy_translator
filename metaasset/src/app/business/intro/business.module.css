@@ -1,0 +1,63 @@
+.page { background-color: var(--color-white); }
+
+/* Hero: metheus property fund style */
+.heroSection { background-color: #c4a882; }
+.heroImage { width: calc(100% - 120px); margin: 0 auto; aspect-ratio: 2.5/1; position: relative; overflow: hidden; }
+.heroImg { object-fit: cover; }
+.heroContent { max-width: var(--max-width); margin: 0 auto; padding: var(--space-2xl) var(--content-px) var(--space-2xl); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); }
+.heroLeft { display: block; }
+.heroTitle { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; }
+.heroRight { display: block; }
+.heroKo { font-size: var(--text-h3); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-md); }
+.heroDesc { font-size: var(--text-sm); color: rgba(255,255,255,0.7); line-height: 2; }
+
+/* Fund categories (large image left + stats right) */
+.catSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.catInner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
+.catLabel { font-size: var(--text-sm); color: var(--color-text-light); display: block; margin-bottom: var(--space-sm); }
+.catHeading { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-text-dark); line-height: 1.6; margin-bottom: var(--space-3xl); }
+.catLight { color: var(--color-text-light); font-weight: 400; }
+
+.catGrid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-2xl); }
+.catImageLarge { aspect-ratio: 4/3; position: relative; overflow: hidden; border-radius: 4px; }
+.catFillImage { object-fit: cover; }
+
+.catStats { display: flex; flex-direction: column; }
+.catStatsImage { width: 100%; aspect-ratio: 16/10; position: relative; overflow: hidden; margin-bottom: var(--space-lg); border-radius: 4px; }
+.catStatsInfo { display: block; }
+.catStatsTitle { font-family: var(--font-display); font-size: var(--text-body); font-weight: 700; color: var(--color-text-dark); display: inline; }
+.catStatsDate { font-size: var(--text-xs); color: var(--color-text-light); margin-left: var(--space-md); }
+.catStatsItems { margin-top: var(--space-lg); }
+.catStatRow { display: flex; justify-content: space-between; padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); font-size: var(--text-sm); color: var(--color-text-body); }
+.catStatValue { font-weight: 700; color: var(--color-text-dark); }
+
+/* Fund type colored blocks */
+.fundBlock { padding: var(--space-3xl) 0; }
+.fundInner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start; }
+.fundContent { display: block; }
+.fundNum { font-family: var(--font-display); font-size: var(--text-display); font-weight: 200; font-style: italic; color: rgba(255,255,255,0.15); display: block; margin-bottom: var(--space-sm); }
+.fundTitle { font-size: var(--text-h2); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-sm); }
+.fundSubtitle { font-size: var(--text-body); color: rgba(255,255,255,0.7); margin-bottom: var(--space-lg); font-weight: 500; }
+.fundDesc { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 1.9; margin-bottom: var(--space-xl); }
+.fundImage { aspect-ratio: 16/10; position: relative; overflow: hidden; border-radius: 4px; }
+.fundFillImage { object-fit: cover; }
+
+.fundAdvantages { margin-bottom: var(--space-xl); padding: var(--space-lg); background-color: rgba(255,255,255,0.05); border-radius: 8px; }
+.fundAdvTitle { font-size: var(--text-sm); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-md); letter-spacing: 0.05em; }
+.fundAdvList { list-style: none; padding: 0; margin: 0; }
+.fundAdvItem { font-size: var(--text-sm); color: rgba(255,255,255,0.7); line-height: 2; display: flex; align-items: center; gap: var(--space-sm); }
+.fundAdvCheck { color: var(--color-gold); font-weight: 700; flex-shrink: 0; }
+
+.fundMetrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.fundMetric { text-align: center; padding: var(--space-md); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; }
+.metricValue { display: block; font-family: var(--font-display); font-size: var(--text-h3); font-weight: 700; color: var(--color-gold); margin-bottom: 4px; }
+.metricLabel { font-size: var(--text-xs); color: rgba(255,255,255,0.5); }
+
+@media (max-width: 1024px) {
+  .heroContent, .catGrid, .fundInner { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .heroSection { padding: var(--space-lg) 0; }
+  .heroImage { width: 100%; }
+  .catSection, .fundBlock { padding: var(--space-2xl) 0; }
+}

@@ -1,0 +1,135 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0A0F1C 0%, #1A2A3A 50%, #0D1117 100%);
+  padding: 2rem;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 3rem 2.5rem 2rem;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+}
+
+.logoSection {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #0A0F1C;
+  margin-bottom: 0;
+}
+
+.logoSub {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #999;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.logoDesc {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #C9A96E;
+  box-shadow: 0 0 0 3px rgba(201,169,110,0.15);
+  background: #fff;
+}
+
+.input::placeholder {
+  color: #bbb;
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: #e53935;
+  background: #fef2f2;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px 0;
+  background: #0A0F1C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #1A2A3A;
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: #999;
+}

@@ -1,0 +1,132 @@
+.nav {
+  background-color: var(--color-dark-brown);
+  position: sticky;
+  top: var(--header-height);
+  z-index: var(--z-nav);
+}
+
+.inner {
+  display: flex;
+}
+
+.link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text-white-dim);
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+  text-decoration: none;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.link:last-child {
+  border-right: none;
+}
+
+.link:hover {
+  color: var(--color-white);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* === Tabs variant (default — large dark blocks) === */
+.tabs .link {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: var(--text-h3);
+  font-weight: 500;
+}
+
+.tabs .linkActive {
+  color: var(--color-white);
+  background-color: var(--color-gold);
+}
+
+/* === Cards variant (About pages — dark ribbon with gold active) === */
+.cards .link {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: var(--text-h3);
+  font-weight: 500;
+}
+
+.cards .linkActive {
+  color: var(--color-white);
+  font-weight: 700;
+  position: relative;
+}
+
+.cards .linkActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-gold);
+}
+
+/* === Minimal variant (simple centered links) === */
+.minimal {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.minimal .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.minimal .link {
+  flex: 0;
+  color: var(--color-text-body);
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-sm);
+  border-right: none;
+}
+
+.minimal .link:hover {
+  color: var(--color-text-dark);
+  background-color: transparent;
+}
+
+.minimal .linkActive {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  position: relative;
+}
+
+.minimal .linkActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-dark);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .link {
+    white-space: nowrap;
+    min-width: max-content;
+    font-size: var(--text-sm);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .tabs .link,
+  .cards .link {
+    font-size: var(--text-body);
+  }
+}
