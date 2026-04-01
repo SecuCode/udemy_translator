@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { MENU_ITEMS } from '@/lib/constants';
 import styles from './Header.module.css';
 import FullscreenMenu from './FullscreenMenu';
-import Logo from '@/components/ui/Logo';
+import LogoMark from '@/components/ui/LogoMark';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,8 +76,7 @@ export default function Header() {
           </button>
 
           <Link href="/" className={styles.logo} onClick={closeMenu}>
-            <Logo width={18} height={15} className={styles.logoSvg} />
-            <span className={styles.logoText}>ETA ASSET MANAGEMENT</span>
+            <span className={styles.logoText}>META ASSET MANAGEMENT</span>
           </Link>
 
           <div className={styles.row1Right} />

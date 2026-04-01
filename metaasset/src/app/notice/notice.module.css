@@ -86,6 +86,7 @@
 .content {
   background-color: var(--color-white);
   padding: var(--space-2xl) var(--space-2xl);
+  padding-top: calc(var(--space-2xl) + 80px);
 }
 
 .searchBar {
@@ -272,4 +273,125 @@
     width: 100%;
     height: 160px;
   }
+}
+
+/* === DETAIL PAGE === */
+.detailHeader {
+  margin-bottom: var(--space-xl);
+}
+
+.detailCategory {
+  display: inline-block;
+  padding: 4px 16px;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+  margin-bottom: var(--space-md);
+}
+
+.detailTitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+}
+
+.detailMeta {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.detailDate,
+.detailAuthor {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+}
+
+.detailDivider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-xl) 0;
+}
+
+.detailBody {
+  min-height: 300px;
+  padding: var(--space-lg) 0;
+}
+
+.detailBody p {
+  font-size: var(--text-body);
+  color: var(--color-text-body);
+  line-height: 1.9;
+  margin: 0;
+}
+
+.detailSpacer {
+  height: var(--space-md);
+}
+
+.detailNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailNavItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--dur-fast);
+}
+
+.detailNavItem:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.detailNavItem:hover {
+  background-color: var(--color-off-white);
+}
+
+.detailNavLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-light);
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.detailNavTitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detailActions {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2xl) 0;
+}
+
+.detailBackBtn {
+  padding: 12px 40px;
+  border: 1px solid var(--color-text-dark);
+  background: transparent;
+  color: var(--color-text-dark);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--dur-fast);
+}
+
+.detailBackBtn:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
 }

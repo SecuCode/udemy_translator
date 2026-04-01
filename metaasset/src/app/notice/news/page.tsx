@@ -42,7 +42,7 @@ export default function NewsPage() {
         <ul className={styles.list}>
           {newsItems.map((item) => (
             <li key={item.id}>
-              <div className={styles.listItem}>
+              <Link href={`/notice/${item.id}`} className={styles.listItem}>
                 <div className={styles.thumbnail}>
                   <span className={styles.thumbnailPlaceholder}>META ASSET</span>
                 </div>
@@ -51,7 +51,7 @@ export default function NewsPage() {
                 </div>
                 <span className={styles.itemDate}>{item.date}</span>
                 <span className={styles.itemLink}>→</span>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

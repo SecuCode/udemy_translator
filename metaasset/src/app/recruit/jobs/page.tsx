@@ -3,24 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IconSearch } from '@/components/ui/Icons';
 import styles from '../../notice/notice.module.css';
+import { JOB_POSTS } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: '채용공고 | 메타자산운용(주)',
+  title: '채용공고 | 메타자산운용',
   description: '메타자산운용의 채용 정보를 안내합니다.',
 };
-
-const JOB_LISTINGS = [
-  { id: 1, status: '진행중', title: '[투자운용부문] 경력사원 채용공고', date: '2026.03.01' },
-  { id: 2, status: '마감', title: '[대체투자팀] 경력사원 채용공고', date: '2025.10.15' },
-  { id: 3, status: '마감', title: '[컴플라이언스팀] 경력사원 채용공고', date: '2025.07.01' },
-  { id: 4, status: '마감', title: '[경영지원팀] 사무직원 채용공고', date: '2025.04.10' },
-  { id: 5, status: '마감', title: '[IPO투자부문] 경력사원 채용공고', date: '2025.01.15' },
-];
 
 export default function JobsPage() {
   return (
     <div className={styles.page}>
-      {/* Left sidebar */}
       <aside className={styles.sidebar}>
         <Link href="/" className={styles.goHome}>GO HOME</Link>
         <h1 className={styles.sidebarTitle}>RECRUITMENT</h1>
@@ -33,9 +25,7 @@ export default function JobsPage() {
         </div>
       </aside>
 
-      {/* Right content */}
       <main className={styles.content}>
-        {/* Hero image */}
         <div className={styles.heroImage}>
           <Image
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=2400&q=90"
@@ -52,16 +42,16 @@ export default function JobsPage() {
         </div>
 
         <ul className={styles.list}>
-          {JOB_LISTINGS.map((job) => (
+          {JOB_POSTS.map((job) => (
             <li key={job.id}>
-              <div className={styles.listItem}>
-                <span className={`${styles.badge} ${job.status === '진행중' ? styles.badgeActive : ''}`}>
+              <Link href={`/recruit/jobs/${job.id}`} className={styles.listItem}>
+                <span className={`${styles.badge} ${job.status === '모집중' ? styles.badgeActive : ''}`}>
                   {job.status}
                 </span>
                 <span className={styles.itemTitle}>{job.title}</span>
-                <span className={styles.itemDate}>{job.date}</span>
+                <span className={styles.itemDate}>{job.deadline}</span>
                 <span className={styles.itemLink}>→</span>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

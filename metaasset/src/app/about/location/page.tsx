@@ -7,7 +7,7 @@ import { IconBuilding, IconMail } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: '오시는 길 | 메타자산운용(주)',
-  description: '메타자산운용의 오시는 길을 안내합니다. 서울특별시 영등포구 국제금융로 8길 11, 대영빌딩 6층 631호',
+  description: '메타자산운용의 오시는 길을 안내합니다. 서울특별시 영등포구 국제금융로 8길 11, 대영빌딩 631호',
 };
 
 const ABOUT_NAV = [
@@ -33,7 +33,7 @@ export default function LocationPage() {
       <section className={styles.mapSection}>
         <div className={styles.mapWrapper}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.123456!2d126.924!3d37.522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMxJzE5LjIiTiAxMjbCsDU1JzI2LjQiRQ!5e0!3m2!1sko!2skr!4v1710000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1582.5!2d126.9243!3d37.5218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f1a4b6c3e8d%3A0x1234567890abcdef!2z64yA7JiB67mM65Sp!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr"
             className={styles.mapIframe}
             allowFullScreen
             loading="lazy"
@@ -53,7 +53,7 @@ export default function LocationPage() {
                 <h3 className={styles.infoTitle}>주소</h3>
                 <p className={styles.infoDesc}>
                   서울특별시 영등포구 국제금융로 8길 11,<br />
-                  (여의도동) 대영빌딩 6층 631호
+                  대영빌딩 631호
                 </p>
               </div>
               <div className={styles.infoCard}>

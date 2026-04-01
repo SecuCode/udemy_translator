@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MENU_ITEMS, COMPANY } from '@/lib/constants';
+import LogoMark from '@/components/ui/LogoMark';
 import styles from './FullscreenMenu.module.css';
 
 interface FullscreenMenuProps {
@@ -63,6 +64,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
       {/* Right: company info */}
       <div className={styles.menuRight}>
         <div className={styles.rightContent}>
+          <LogoMark size="80px" color="#C9A96E" />
           <div className={styles.rightLogo}>META ASSET<br />MANAGEMENT</div>
           <div className={styles.rightTagline}>
             The highest &amp; best<br />

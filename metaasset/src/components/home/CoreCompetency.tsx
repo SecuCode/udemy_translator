@@ -34,9 +34,9 @@ export default function CoreCompetency() {
           <div className={styles.infoTop}>
             <span className={styles.infoLabel}>운용자산</span>
             <h2 className={styles.infoTitle}>
-              모든 것이 연결되고 무엇으로도
+              전문성과 신뢰를 바탕으로
               <br />
-              규정할 수 없는 새로운 가능성의 시작
+              새로운 투자 가치를 창출합니다
             </h2>
             <p className={styles.infoDesc}>
               풍부한 부동산, 주식, 채권의 운용경험과
@@ -60,17 +60,17 @@ export default function CoreCompetency() {
           <div className={styles.statsRow}>
             <div className={styles.statItem}>
               <span className={styles.statDot}>●</span>
-              <span className={styles.statLabel}>총 누적 펀드 자산</span>
+              <span className={styles.statLabel}>목표 운용자산</span>
               <div className={styles.statValue}>
-                <span className={styles.statNumber}>5,000</span>
+                <span className={styles.statNumber}>3,000</span>
                 <span className={styles.statUnit}>억원</span>
               </div>
             </div>
             <div className={styles.statItem}>
               <span className={styles.statDot}>●</span>
-              <span className={styles.statLabel}>총 운용 펀드</span>
+              <span className={styles.statLabel}>목표 운용 펀드</span>
               <div className={styles.statValue}>
-                <span className={styles.statNumber}>15</span>
+                <span className={styles.statNumber}>5+</span>
                 <span className={styles.statUnit}>개</span>
               </div>
             </div>

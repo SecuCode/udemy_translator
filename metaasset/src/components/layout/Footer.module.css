@@ -29,11 +29,11 @@
   white-space: nowrap;
 }
 
-.footerLogoImg {
+.footerLogoMark {
   flex-shrink: 0;
-  width: 18px !important;
-  height: 15px !important;
-  margin-right: 1px;
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 2px;
   transform: translateY(-1px);
 }
 

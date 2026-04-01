@@ -137,7 +137,7 @@
 }
 
 /* Infrastructure Section */
-.infraSection { background-color: var(--bg-section); padding: var(--space-4xl) 0; }
+.infraSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
 .infraGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -161,8 +161,7 @@
   color: rgba(255,255,255,0.5);
   line-height: 1.9;
 }
-.infraImageWrap { width: 100%; overflow: hidden; border-radius: 4px; }
-.infraImage { width: 100%; height: auto; display: block; }
+
 
 /* Responsive */
 @media (max-width: 1024px) {

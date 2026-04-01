@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import SubpageHero from '@/components/common/SubpageHero';
 import SubNavigation from '@/components/common/SubNavigation';
 import ScrollReveal from '@/components/common/ScrollReveal';
@@ -163,17 +162,6 @@ export default function StrategyPage() {
             ))}
           </div>
 
-          <ScrollReveal delay={200}>
-            <div className={styles.processImageWrap}>
-              <Image
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2400&q=90"
-                alt="운용전략 데이터 분석"
-                width={1200}
-                height={500}
-                className={styles.processImage}
-              />
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

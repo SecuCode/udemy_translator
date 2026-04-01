@@ -18,11 +18,17 @@ export default function HeroSection() {
       </div>
 
       <div className={styles.content}>
+        <span className={styles.subLabel}>META ASSET MANAGEMENT</span>
         <h1 className={styles.title}>
-          <span className={styles.titleLight}>메타자산운용은</span>
+          <span className={styles.titleLight}>The Highest &amp; Best</span>
           <br />
-          <span className={styles.titleBold}>금융과 부동산의 새로운 가치를</span> 개발합니다.
+          <span className={styles.titleBold}>Meta Asset Management</span>
         </h1>
+        <p className={styles.subtitle}>
+          다각화된 네트워크와 풍부한 운용경험을 바탕으로
+          <br />
+          금융과 부동산의 새로운 가치를 창출합니다.
+        </p>
       </div>
 
       <div className={styles.scrollDown}>

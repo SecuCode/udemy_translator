@@ -16,9 +16,10 @@ const ASSETS_NAV = [
 ];
 
 const PORTFOLIO = [
-  { name: '부동산', ratio: 54, amount: '2,700억원', color: '#3C3228' },
-  { name: 'IPO / 공모주', ratio: 26, amount: '1,300억원', color: '#1A2D4A' },
-  { name: '대체투자', ratio: 20, amount: '1,000억원', color: '#2A3A2A' },
+  { name: 'IPO / 공모주', ratio: 35, amount: '266억원', color: '#1A2D4A' },
+  { name: '메자닌 / 채권', ratio: 30, amount: '228억원', color: '#2A3A2A' },
+  { name: '코스닥벤처', ratio: 20, amount: '152억원', color: '#3C3228' },
+  { name: '기타 운용', ratio: 15, amount: '113억원', color: '#3A2A3A' },
 ];
 
 const INVESTMENT_AREAS = [
@@ -102,17 +103,17 @@ export default function PerformancePage() {
               <thead>
                 <tr>
                   <th>구분</th>
-                  <th>2024년</th>
                   <th>2025년</th>
-                  <th>2026년(예상)</th>
+                  <th>2026년</th>
+                  <th>2027년(목표)</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>운용자산(억원)</td><td>1,500</td><td>3,800</td><td>5,000</td></tr>
-                <tr><td>운용펀드(개)</td><td>5</td><td>12</td><td>15</td></tr>
+                <tr><td>운용자산(억원)</td><td>520</td><td>759</td><td>1,000</td></tr>
+                <tr><td>운용펀드(개)</td><td>4</td><td>6</td><td>10</td></tr>
                 <tr><td>평균수익률(%)</td><td>8.5</td><td>11.2</td><td>12.0</td></tr>
-                <tr><td>신규설정(건)</td><td>5</td><td>7</td><td>3</td></tr>
-                <tr><td>임직원(명)</td><td>15</td><td>25</td><td>30</td></tr>
+                <tr><td>신규설정(건)</td><td>2</td><td>3</td><td>5</td></tr>
+                <tr><td>임직원(명)</td><td>5</td><td>8</td><td>10</td></tr>
               </tbody>
             </table>
           </ScrollReveal>

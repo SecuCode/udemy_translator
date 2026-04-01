@@ -2,18 +2,53 @@
 .fillImage { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px; }
 .inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
 
+/* Common Section Headers */
+.sectionHeader { text-align: center; margin-bottom: var(--space-3xl); }
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionLabelLight {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-lg);
+}
+.sectionTitleLight {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+.sectionDescLight {
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.5);
+  line-height: 2;
+}
+
 .label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
 .labelDark { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-gold); display: block; margin-bottom: 1rem; }
 
-/* Dark Section */
+/* ========== Section 1: Dark Intro ========== */
 .darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
 .heading { font-size: var(--text-3xl); font-weight: 600; color: var(--color-white); line-height: 1.4; margin-bottom: 1.5rem; }
 .desc { font-size: var(--text-base); color: rgba(255,255,255,0.6); line-height: 1.8; }
-
 .introGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .introImageCol { border-radius: 4px; overflow: hidden; }
 
-/* Process Section */
+/* ========== Section 2: Light Process ========== */
 .processSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
 .headingDark { font-size: var(--text-3xl); font-weight: 600; color: #111; margin-bottom: 3rem; }
 .processGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
@@ -23,19 +58,148 @@
 .processTitle { font-size: 1.1rem; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
 .processDesc { font-size: var(--text-sm); color: #666; line-height: 1.6; }
 
-/* Stats Section */
-.statsSection { background-color: #0a0a0a; padding: var(--space-3xl) 0; }
+/* ========== Section 3: Dark — Selection Criteria ========== */
+.criteriaSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.criteriaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.criteriaCard {
+  padding: var(--space-xl);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color var(--dur-fast) var(--ease-smooth);
+}
+.criteriaCard:hover { border-color: rgba(201,169,110,0.3); }
+.criteriaNum {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.criteriaTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+.criteriaList { list-style: none; padding: 0; margin: 0; }
+.criteriaItem {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.55);
+  line-height: 2.2;
+  padding-left: 1rem;
+  position: relative;
+}
+.criteriaItem::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+
+/* ========== Section 4: Light — Differentiators ========== */
+.diffSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.diffGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.diffCard {
+  padding: var(--space-xl);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  transition: box-shadow var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth);
+}
+.diffCard:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.diffIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 12px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+.diffTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+}
+.diffDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 1.85;
+}
+
+/* ========== Section 5: Dark — Risk Management ========== */
+.riskSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.riskGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+.riskCard {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color var(--dur-fast) var(--ease-smooth);
+}
+.riskCard:hover { border-color: rgba(201,169,110,0.3); }
+.riskNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  width: 40px;
+}
+.riskTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+.riskDesc {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+}
+
+/* ========== Section 6: Stats ========== */
+.statsSection { background-color: #111; padding: var(--space-3xl) 0; border-top: 1px solid rgba(255,255,255,0.05); }
 .statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
 .statItem { padding: 2rem 0; }
 .statValue { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--color-white); }
 .statUnit { font-size: 1.5rem; color: var(--color-gold); margin-left: 0.25rem; }
 .statLabel { display: block; margin-top: 0.75rem; font-size: var(--text-sm); color: rgba(255,255,255,0.5); }
 
+/* ========== Responsive ========== */
 @media (max-width: 1024px) {
   .introGrid { grid-template-columns: 1fr; gap: 2rem; }
   .processGrid { grid-template-columns: repeat(3, 1fr); }
+  .criteriaGrid { grid-template-columns: 1fr; }
+  .diffGrid { grid-template-columns: repeat(2, 1fr); }
+  .riskGrid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .processGrid { grid-template-columns: 1fr 1fr; }
   .statsGrid { grid-template-columns: 1fr 1fr; }
+  .diffGrid { grid-template-columns: 1fr; }
+  .darkSection, .processSection, .criteriaSection, .diffSection, .riskSection, .statsSection { padding: var(--space-2xl) 0; }
 }

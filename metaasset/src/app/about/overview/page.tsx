@@ -24,7 +24,7 @@ export default function OverviewPage() {
       <SubpageHero
         titleEn="ABOUT US"
         titleKo="회사소개"
-        description="풍부한 경험을 통하여 미래 고객에게 최고의 성과를 보답하는 것, 메타자산운용의 존재 이유이자 이념입니다."
+        description="투자자의 신뢰에 성과로 보답하는 것, 메타자산운용의 존재 이유입니다."
         backgroundImage="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2400&q=90"
       />
       <SubNavigation items={ABOUT_NAV} variant="cards" />
@@ -38,7 +38,7 @@ export default function OverviewPage() {
                 <span className={styles.whoLabel}>WHO WE ARE</span>
                 <h2 className={styles.whoHeading}>
                   함께 성장하고 서로 신뢰하는<br />
-                  행복한 기업 문화를 꿈꾸는 메타자산운용(주)
+                  기업 문화를 꿈꾸는 메타자산운용
                 </h2>
               </div>
               <div className={styles.whoImageCol}>
@@ -70,9 +70,8 @@ export default function OverviewPage() {
               </div>
               <div className={styles.whoBottomText}>
                 <h3 className={styles.whoSubHeading}>
-                  모든 것이 연결되고<br />
-                  무엇으로도 규정할 수 없는<br />
-                  새로운 가능성의 시작
+                  전문성과 신뢰를 바탕으로<br />
+                  새로운 투자 가치를 창출합니다
                 </h3>
                 <p className={styles.whoDesc}>
                   풍부한 부동산, 주식, 채권의 운용경험과<br />
@@ -92,8 +91,8 @@ export default function OverviewPage() {
             <div className={styles.companyHeader}>
               <span className={styles.companyLabel}>COMPANY INTRODUCTION</span>
               <h2 className={styles.companySlogan}>
-                풍부한 경험을 통하여 미래 고객에게 최고의 성과를<br />
-                보답하는 것, 메타자산운용(주)의 존재 이유이자 이념입니다.
+                투자자의 신뢰에 성과로 보답하는 것,<br />
+                메타자산운용의 존재 이유입니다.
               </h2>
             </div>
           </ScrollReveal>
@@ -120,23 +119,19 @@ export default function OverviewPage() {
                     </tr>
                     <tr>
                       <th>설립일</th>
-                      <td>2024년 전문사모집합투자업 등록</td>
+                      <td>2019년 전문사모집합투자업 등록</td>
                     </tr>
                     <tr>
                       <th>대표이사</th>
-                      <td>홍길동</td>
-                    </tr>
-                    <tr>
-                      <th>자본금</th>
-                      <td>20억원</td>
+                      <td>김기용</td>
                     </tr>
                     <tr>
                       <th>연락처</th>
-                      <td>T. 02-1234-5678 / F. 02-1234-5679</td>
+                      <td>T. 02-780-9901 / F. 02-780-9902</td>
                     </tr>
                     <tr>
                       <th>주소</th>
-                      <td>서울특별시 영등포구 여의대로 108</td>
+                      <td>서울특별시 영등포구 국제금융로 8길 11, 대영빌딩 631호</td>
                     </tr>
                   </tbody>
                 </table>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { COMPANY, MENU_ITEMS } from '@/lib/constants';
 import styles from './Footer.module.css';
-import Logo from '@/components/ui/Logo';
+
 
 export default function Footer() {
   return (
@@ -10,8 +10,7 @@ export default function Footer() {
         <div className={styles.footerTop}>
           <div>
             <div className={styles.footerLogo}>
-              <Logo width={18} height={15} className={styles.footerLogoImg} />
-              <span>ETA <span className={styles.footerLogoAccent}>ASSET MANAGEMENT</span></span>
+              <span>META <span className={styles.footerLogoAccent}>ASSET MANAGEMENT</span></span>
             </div>
             <div className={styles.companyDetails}>
               <div className={styles.detailItem}>

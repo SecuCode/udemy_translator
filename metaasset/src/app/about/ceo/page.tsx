@@ -37,8 +37,8 @@ export default function CeoPage() {
               <div className={styles.ceoImageCol}>
                 <div className={styles.ceoImageWrapper}>
                   <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=2400&q=90"
-                    alt="메타자산운용 대표이사"
+                    src="/images/ceo-portrait.png"
+                    alt="메타자산운용 대표이사 김기용"
                     width={400}
                     height={500}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -70,7 +70,7 @@ export default function CeoPage() {
               <p className={styles.paragraph}>
                 저희 메타자산운용은 부동산 투자, IPO 투자, 대체투자 등 다양한 투자 영역에서
                 전문성과 경험을 바탕으로 투자자 여러분께 최적의 투자 솔루션을 제공하고 있습니다.
-                2024년 설립 이래, 짧은 기간에도 불구하고 약 5,000억원의 운용자산을 달성하며
+                2019년 설립 이래, 꾸준히 성장하며 약 759억원의 운용자산을 달성하며
                 급속한 성장을 이루어 왔습니다.
               </p>
               <p className={styles.paragraph}>
@@ -91,7 +91,7 @@ export default function CeoPage() {
               </p>
               <div className={styles.signature}>
                 <span className={styles.sigRole}>메타자산운용(주) 대표이사</span>
-                <span className={styles.sigName}>홍 길 동</span>
+                <span className={styles.sigName}>김 기 용</span>
               </div>
             </div>
           </ScrollReveal>
@@ -104,7 +104,7 @@ export default function CeoPage() {
           <ScrollReveal>
             <div className={styles.numbersGrid}>
               <div className={styles.numberItem}>
-                <span className={styles.numberValue}>5,000<span className={styles.numberUnit}>억원</span></span>
+                <span className={styles.numberValue}>759<span className={styles.numberUnit}>억원</span></span>
                 <span className={styles.numberLabel}>운용자산규모</span>
               </div>
               <div className={styles.numberItem}>
@@ -116,7 +116,7 @@ export default function CeoPage() {
                 <span className={styles.numberLabel}>평균 수익률</span>
               </div>
               <div className={styles.numberItem}>
-                <span className={styles.numberValue}>30<span className={styles.numberUnit}>+</span></span>
+                <span className={styles.numberValue}>15<span className={styles.numberUnit}>+</span></span>
                 <span className={styles.numberLabel}>전문 인력</span>
               </div>
             </div>

@@ -20,42 +20,22 @@ const FUND_TYPES = [
   {
     num: '01',
     title: '부동산 개발 펀드',
-    desc: '부동산 개발사업에 투자하여 개발수익을 추구하는 펀드',
-    detail: '프라임급 오피스, 대형 물류센터, 복합상업시설 등의 개발사업에 투자하여 개발이익을 실현합니다. 사업의 기획 단계부터 인허가, 시공, 분양/임대까지 전 과정에 걸쳐 전문적인 관리를 수행하며, 엄격한 리스크 관리 체계를 통해 투자자의 자산을 보호합니다.',
-    advantages: ['분양수익 및 개발이익 극대화', '체계적 사업관리(PM) 역량', '시공사 신용보강 구조'],
-    metrics: { aum: '2,100억', returns: '연 9.2%', count: '8건' },
+    desc: '땅을 매입하고, 건물을 짓고, 완성된 자산을 분양·매각하여 수익을 실현합니다',
+    detail: '쉽게 말해 "부동산을 직접 만들어서 파는" 펀드입니다. 서울·수도권 핵심 입지에 오피스빌딩, 물류센터, 주상복합 등을 새로 건설하고, 완공 후 분양 또는 통매각하여 개발차익을 투자자에게 돌려드립니다. 일반 부동산 투자보다 수익률이 높은 대신, 시공·인허가 리스크가 있으므로 메타자산운용이 기획→인허가→시공감리→분양까지 전 과정을 직접 관리합니다.',
+    advantages: ['높은 수익률 — 개발 이익이 그대로 투자자 수익으로', '시공사 연대보증·에스크로 계좌 등 다중 안전장치', '전담 PM팀이 공정·원가·품질 실시간 관리'],
+    metrics: { aum: '420억', returns: '연 9.2%', count: '3건' },
     color: '#5C524A',
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2400&q=90',
   },
   {
     num: '02',
     title: '부동산 임대 펀드',
-    desc: '오피스·상업시설 등 우량 부동산에 투자하여 안정적 임대수익을 추구하는 펀드',
-    detail: '서울 주요 권역의 프라임급 오피스빌딩, 물류센터, 리테일 자산 등에 투자하여 장기적이고 안정적인 임대수익을 추구합니다. 우량 임차인 기반의 장기 임대계약을 통해 현금흐름의 예측 가능성을 확보하고, 자산 가치 상승에 따른 자본이득을 동시에 추구합니다.',
-    advantages: ['우량 임차인 장기 계약 기반', '안정적 배당수익 실현', '자산 가치 상승 자본이득'],
-    metrics: { aum: '1,500억', returns: '연 7.5%', count: '4건' },
+    desc: '이미 완공된 우량 건물을 매입하여 매달 임대료 수익을 배당합니다',
+    detail: '쉽게 말해 "건물주가 되어 월세를 받는" 펀드입니다. 서울 강남·여의도·광화문 등의 프라임급 오피스빌딩이나 대기업·공기업이 장기 임차 중인 물류센터를 매입하고, 매달 걷히는 임대료를 투자자에게 분기마다 배당합니다. 개발 펀드 대비 수익률은 낮지만, 임차인이 이미 확보되어 있어 안정적이고 예측 가능한 현금흐름이 장점입니다.',
+    advantages: ['안정적 배당 — 3~6개월마다 임대수익 배당', '대기업·공기업 장기 임차 계약으로 공실 리스크 최소화', '부동산 가격 상승 시 매각 차익까지 추가 수익'],
+    metrics: { aum: '339억', returns: '연 7.5%', count: '3건' },
     color: '#3D342D',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=2400&q=90',
-  },
-  {
-    num: '03',
-    title: 'IPO / 공모주 펀드',
-    desc: '기업공개(IPO) 및 공모주에 전략적으로 투자하여 상위 수익률을 추구하는 펀드',
-    detail: '철저한 기업 분석과 IPO 시장 전문 역량을 바탕으로, 성장 가능성이 높은 기업의 공모주에 전략적으로 투자합니다. 상장 전 기업가치 분석, 적정 공모가 산정, 상장 후 매도 타이밍 전략까지 체계적인 프로세스를 통해 최고 수익률을 추구합니다.',
-    advantages: ['심층 기업가치 분석 역량', '최적 매도 타이밍 전략', '분산 투자를 통한 리스크 관리'],
-    metrics: { aum: '800억', returns: '연 18.3%', count: '3건' },
-    color: '#1A2D4A',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=2400&q=90',
-  },
-  {
-    num: '04',
-    title: '대체투자 펀드',
-    desc: '인프라, 메자닌, 구조화 금융 등 다양한 대체투자 자산에 분산 투자하는 펀드',
-    detail: '전통적인 주식·채권 투자를 넘어, 인프라, 메자닌 대출, 구조화 금융, 특별자산(항공기, 선박) 등 다양한 대체투자 자산에 분산 투자하여 포트폴리오의 안정성과 수익성을 동시에 추구합니다. 시장 변동성에 대한 헤지 효과와 일정한 현금흐름을 기대할 수 있습니다.',
-    advantages: ['포트폴리오 다각화 효과', '전통자산 대비 낮은 변동성', '정기적 이자수익 확보'],
-    metrics: { aum: '600억', returns: '연 8.1%', count: '5건' },
-    color: '#2A3A2A',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2400&q=90',
   },
 ];
 
@@ -123,15 +103,15 @@ export default function BusinessIntroPage() {
                 </div>
                 <div className={styles.catStatsInfo}>
                   <h3 className={styles.catStatsTitle}>FUND OVERVIEW</h3>
-                  <span className={styles.catStatsDate}>2025.12 기준</span>
+                  <span className={styles.catStatsDate}>2026.03 기준</span>
                   <div className={styles.catStatsItems}>
                     <div className={styles.catStatRow}>
                       <span>▎ 누적운용 펀드</span>
-                      <span className={styles.catStatValue}>15개</span>
+                      <span className={styles.catStatValue}>6개</span>
                     </div>
                     <div className={styles.catStatRow}>
                       <span>▎ 누적 펀드설정 자산</span>
-                      <span className={styles.catStatValue}>5,000억</span>
+                      <span className={styles.catStatValue}>759억</span>
                     </div>
                     <div className={styles.catStatRow}>
                       <span>▎ 평균 투자 수익률</span>

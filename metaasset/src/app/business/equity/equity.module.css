@@ -1,33 +1,178 @@
 .page { background-color: var(--color-white); }
 .inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--content-px); }
 
-/* Light intro */
+/* Common Section Headers */
+.sectionHeader { text-align: center; margin-bottom: var(--space-3xl); }
+.sectionLabel {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionLabelLight {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.sectionTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-lg);
+}
+.sectionTitleLight {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+.sectionDescLight {
+  font-size: var(--text-body);
+  color: rgba(255,255,255,0.5);
+  line-height: 2;
+}
+
+/* ========== Section 1: Light Intro ========== */
 .lightSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
 .introGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
 .introText {}
 .label { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: var(--color-text-light); display: block; margin-bottom: var(--space-lg); }
 .heading { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 700; color: var(--color-text-dark); line-height: 1.8; margin-bottom: var(--space-lg); }
 .desc { font-size: var(--text-sm); color: var(--color-text-body); line-height: 2; }
-.introImageWrap { overflow: hidden; }
+.introImageWrap { overflow: hidden; border-radius: 4px; }
 .introImage { width: 100%; height: auto; display: block; }
 
-/* Dark strategy cards */
+/* ========== Section 2: Dark Strategy Cards ========== */
 .darkSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
 .darkLabel { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: 0.2em; color: rgba(255,255,255,0.4); display: block; margin-bottom: var(--space-sm); }
 .darkHeading { font-size: var(--text-h2); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-3xl); }
 .strategyGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background-color: rgba(255,255,255,0.05); }
-.strategyCard { padding: var(--space-2xl); }
-.strategyIcon { font-size: 2rem; display: block; margin-bottom: var(--space-lg); }
+.strategyCard { padding: var(--space-2xl); background: rgba(255,255,255,0.02); transition: background var(--dur-fast) var(--ease-smooth); }
+.strategyCard:hover { background: rgba(255,255,255,0.04); }
+.strategyIcon { font-size: 2rem; display: block; margin-bottom: var(--space-lg); color: var(--color-gold); }
 .strategyTitle { font-size: var(--text-h3); font-weight: 700; color: var(--color-white); margin-bottom: var(--space-md); }
 .strategyDesc { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 2; }
 
-/* Light performance */
-.perfSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
-.perfGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2xl); text-align: center; }
-.perfItem {}
-.perfValue { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--color-text-dark); display: block; margin-bottom: var(--space-sm); }
-.perfUnit { font-size: 0.5em; font-weight: 400; color: var(--color-text-light); }
-.perfLabel { font-size: var(--text-sm); color: var(--color-text-body); }
+/* ========== Section 3: Light Process ========== */
+.processSection { background-color: var(--color-off-white); padding: var(--space-4xl) 0; }
+.processGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.processCard { background: var(--color-white); border: 1px solid #e0e0e0; border-radius: 8px; padding: 2rem 1.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+.processCard:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.processStep { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--color-gold); display: block; margin-bottom: 1rem; }
+.processTitle { font-size: 1.1rem; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+.processDesc { font-size: var(--text-sm); color: #666; line-height: 1.6; }
 
-@media (max-width: 1024px) { .introGrid, .strategyGrid { grid-template-columns: 1fr; } }
-@media (max-width: 768px) { .lightSection, .darkSection, .perfSection { padding: var(--space-2xl) 0; } .perfGrid { grid-template-columns: 1fr; gap: var(--space-xl); } }
+/* ========== Section 4: Dark — Research Capabilities ========== */
+.researchSection { background-color: #0a0a0a; padding: var(--space-4xl) 0; }
+.researchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.researchCard {
+  padding: var(--space-xl);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  transition: border-color var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth);
+}
+.researchCard:hover {
+  border-color: rgba(201,169,110,0.3);
+  transform: translateY(-3px);
+}
+.researchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 12px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+.researchTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+.researchDesc {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+}
+
+/* ========== Section 5: Light — Risk Management ========== */
+.riskSection { background-color: var(--color-white); padding: var(--space-4xl) 0; }
+.riskGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.riskCard {
+  padding: var(--space-xl);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  transition: box-shadow var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-smooth);
+}
+.riskCard:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.riskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+.riskTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+.riskLimit {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-gold);
+  background: rgba(201,169,110,0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.riskDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-body);
+  line-height: 1.85;
+}
+
+/* ========== Section 6: Dark Performance Stats ========== */
+.perfSection { background-color: #111; padding: var(--space-3xl) 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.perfGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2xl); text-align: center; }
+.perfItem {}
+.perfValue { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--color-white); display: block; margin-bottom: var(--space-sm); }
+.perfUnit { font-size: 0.5em; font-weight: 400; color: var(--color-gold); }
+.perfLabel { font-size: var(--text-sm); color: rgba(255,255,255,0.4); }
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .introGrid { grid-template-columns: 1fr; }
+  .strategyGrid { grid-template-columns: 1fr; }
+  .processGrid { grid-template-columns: repeat(3, 1fr); }
+  .researchGrid { grid-template-columns: 1fr; }
+  .riskGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .lightSection, .darkSection, .processSection, .researchSection, .riskSection, .perfSection { padding: var(--space-2xl) 0; }
+  .processGrid { grid-template-columns: 1fr 1fr; }
+  .riskGrid { grid-template-columns: 1fr; }
+  .perfGrid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+}

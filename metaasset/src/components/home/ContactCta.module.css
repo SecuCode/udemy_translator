@@ -1,0 +1,212 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.bgGlow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(26, 58, 92, 0.12) 0%, transparent 50%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 var(--content-px);
+}
+
+.content {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--ease-out);
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s var(--ease-out) 0.2s;
+}
+
+.visible .label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.7s var(--ease-out) 0.4s;
+}
+
+.visible .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: var(--space-2xl);
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out) 0.6s;
+}
+
+.visible .desc {
+  opacity: 1;
+}
+
+.contactGrid {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.7s var(--ease-out) 0.8s;
+}
+
+.visible .contactGrid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.contactIcon {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-xs);
+}
+
+.contactLabel {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+}
+
+.contactValue {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  max-width: 280px;
+}
+
+.ctaWrap {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.7s var(--ease-out) 1s;
+}
+
+.visible .ctaWrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.85rem 2rem;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.ctaButton:hover {
+  background: #d4b87a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
+}
+
+.ctaButtonOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  transition: all 0.4s var(--ease-out);
+}
+
+.ctaButtonOutline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.ctaArrow {
+  font-size: 1rem;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.ctaButton:hover .ctaArrow,
+.ctaButtonOutline:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding: var(--space-3xl) 0;
+  }
+
+  .contactGrid {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .ctaWrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaButton,
+  .ctaButtonOutline {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}

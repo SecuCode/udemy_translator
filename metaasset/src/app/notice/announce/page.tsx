@@ -39,14 +39,14 @@ export default function AnnouncePage() {
         <ul className={styles.list}>
           {announceItems.map((item) => (
             <li key={item.id}>
-              <div className={styles.listItem}>
+              <Link href={`/notice/${item.id}`} className={styles.listItem}>
                 <div className={styles.thumbnail}>
                   <span className={styles.thumbnailPlaceholder}>META ASSET</span>
                 </div>
                 <span className={styles.itemTitle}>{item.title}</span>
                 <span className={styles.itemDate}>📅 {item.date}</span>
                 <span className={styles.itemLink}>→</span>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

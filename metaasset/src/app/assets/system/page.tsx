@@ -220,18 +220,6 @@ export default function SystemPage() {
               </ScrollReveal>
             ))}
           </div>
-
-          <ScrollReveal delay={200}>
-            <div className={styles.infraImageWrap}>
-              <Image
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=2400&q=90"
-                alt="서버 인프라"
-                width={1200}
-                height={500}
-                className={styles.infraImage}
-              />
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </div>
